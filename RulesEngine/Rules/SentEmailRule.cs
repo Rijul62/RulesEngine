@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RulesEngine.Interfaces;
 
 namespace RulesEngine.Rules
 {
-    class SentEmailRule
+    public class SentEmailRule : IRule
     {
+        public string Execute(int paymentType)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool IsApplicable(int paymentType)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
