@@ -3,7 +3,7 @@ using System;
 
 namespace RulesEngine.Rules
 {
-    public class FIrstAidVideoRule : IRule
+    public class FirstAidVideoRule : IRule
     {
         public string Execute(int paymentType)
         {
