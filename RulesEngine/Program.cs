@@ -17,7 +17,7 @@ namespace RulesEngine
             var rules = new IRule[] {
                 new CommissionAgentRule(),
                 new DuplicatePackageSlipRule(),
-                new FirstAidVideoRule(),
+                new FIrstAidVideoRule(),
                 new MembershipActivatedRule(),
                 new PackageSlipRule(),
                 new SentEmailRule(),

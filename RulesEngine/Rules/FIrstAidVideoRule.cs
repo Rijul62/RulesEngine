@@ -1,18 +1,19 @@
 ﻿using RulesEngine.Interfaces;
+using RulesEngine.Models;
 using System;
 
 namespace RulesEngine.Rules
 {
-    public class FirstAidVideoRule : IRule
+    public class FIrstAidVideoRule : IRule
     {
         public string Execute(int paymentType)
         {
-            throw new NotImplementedException();
+            return "Free first aid video added";
         }
 
         public bool IsApplicable(int paymentType)
         {
-            throw new NotImplementedException();
+            return paymentType == (int)PaymentProduct.LearningSkiVideo;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using RulesEngine.Interfaces;
+using RulesEngine.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,12 +10,15 @@ namespace RulesEngine.Rules
     {
         public string Execute(int paymentType)
         {
-            throw new NotImplementedException();
+            return "Generated free commission agent";
         }
 
         public bool IsApplicable(int paymentType)
         {
-            throw new NotImplementedException();
+            var isPhysicalProduct = paymentType == (int)PaymentProduct.PhysicalProduct;
+            var isBook = paymentType == (int)PaymentProduct.Book;
+
+            return isPhysicalProduct || isBook;
         }
     }
 }

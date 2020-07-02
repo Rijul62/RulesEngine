@@ -1,4 +1,5 @@
 ﻿using RulesEngine.Interfaces;
+using RulesEngine.Models;
 using System;
 
 namespace RulesEngine.Rules
@@ -7,12 +8,12 @@ namespace RulesEngine.Rules
     {
         public string Execute(int paymentType)
         {
-            throw new NotImplementedException();
+            return "Membership activated";
         }
 
         public bool IsApplicable(int paymentType)
         {
-            throw new NotImplementedException();
+            return paymentType == (int)PaymentProduct.Membership;
         }
     }
 }

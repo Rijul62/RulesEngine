@@ -1,4 +1,5 @@
 ﻿using RulesEngine.Interfaces;
+using RulesEngine.Models;
 
 namespace RulesEngine.Rules
 {
@@ -6,12 +7,12 @@ namespace RulesEngine.Rules
     {
         public string Execute(int paymentType)
         {
-            throw new System.NotImplementedException();
+            return "Duplicate package slip generated";
         }
 
         public bool IsApplicable(int paymentType)
         {
-            throw new System.NotImplementedException();
+            return paymentType == (int)PaymentProduct.Book;
         }
     }
 }

@@ -4,16 +4,16 @@ using System;
 
 namespace RulesEngine.Rules
 {
-    public class PackageSlipRule : IRule
+    public class UpgradeRule : IRule
     {
         public string Execute(int paymentType)
         {
-            return "Package slip generated";
+            return "Upgraded";
         }
 
         public bool IsApplicable(int paymentType)
         {
-            return paymentType == (int)PaymentProduct.PhysicalProduct;
+            return paymentType == (int)PaymentProduct.Upgrade;
         }
     }
 }

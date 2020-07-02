@@ -1,4 +1,5 @@
 ﻿using RulesEngine.Interfaces;
+using RulesEngine.Models;
 
 namespace RulesEngine.Rules
 {
@@ -6,12 +7,15 @@ namespace RulesEngine.Rules
     {
         public string Execute(int paymentType)
         {
-            throw new System.NotImplementedException();
+            return "Email sent for activation/upgrade";
         }
 
         public bool IsApplicable(int paymentType)
         {
-            throw new System.NotImplementedException();
+            var isMembership = paymentType == (int)PaymentProduct.Membership;
+            var isUpgrade = paymentType == (int)PaymentProduct.Upgrade;
+
+            return isMembership || isUpgrade;
         }
     }
 }
