@@ -1,6 +1,7 @@
 ﻿using RulesEngine.Interfaces;
 using RulesEngine.Rules;
 using System;
+using System.Collections.Generic;
 
 namespace RulesEngine
 {
@@ -9,10 +10,14 @@ namespace RulesEngine
         static void Main(string[] args)
         {
             Console.WriteLine("Rules Engine");
-            Console.WriteLine(ExecuteRule(3));
+            var getRules = ExecuteRule(3);
+            foreach(var item in getRules)
+            {
+                Console.WriteLine(item);
+            }
         }
 
-        public static string ExecuteRule(int paymentType)
+        public static string[] ExecuteRule(int paymentType)
         {
             var rules = new IRule[] {
                 new CommissionAgentRule(),

@@ -13,12 +13,15 @@ namespace RulesEngine
             _rules = rules;
         }
 
-        public string Execute(int paymentType)
+        public string[] Execute(int paymentType)
         {
+            List<string> response = new List<string>(); ;
             if (paymentType == (int)PaymentProduct.DefaultProduct)
             {
-                return "Default product selected. No rules to generate";
+                response.Add("Default product selected. No rules to generate");
+                return response.ToArray();
             }
+
             var result = _rules
                         .Where(rule => rule.IsApplicable(paymentType))
                         .Select(rule => rule.Execute(paymentType));
@@ -26,11 +29,16 @@ namespace RulesEngine
             if (result != null
                 && result.Any())
             {
-                return result.FirstOrDefault();
+                foreach(var item in result.ToList())
+                {
+                    response.Add(item);
+                }
+                return response.ToArray();
             }
             else
             {
-                return "Invalid product selected";
+                response.Add("Invalid product selected");
+                return response.ToArray();
             }
         }
     }
