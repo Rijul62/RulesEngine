@@ -12,7 +12,7 @@ namespace RulesEngine
             Console.WriteLine(ExecuteRule(3));
         }
 
-        private static string ExecuteRule(int paymentType)
+        public static string ExecuteRule(int paymentType)
         {
             var rules = new IRule[] {
                 new CommissionAgentRule(),

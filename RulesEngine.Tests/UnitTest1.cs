@@ -17,10 +17,13 @@ namespace RulesEngine.Tests
         public void Given_ForDifferentPaymentTypes_When_RulesAreApplied_Then_TheExpectedOutputIsProcessed(int paymentType, string expectedResult)
         {
             // Arrange
+            string actualOutput;
 
             // Act
+            actualOutput = RulesEngine.ExecuteRule(paymentType);
 
             // Assert
+            actualOutput.Equals(expectedResult);
 
         }
     }
