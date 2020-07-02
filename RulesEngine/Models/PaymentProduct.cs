@@ -1,8 +1,8 @@
 ﻿namespace RulesEngine.Models
 {
-    public enum PaymentType
+    public enum PaymentProduct
     {
-        NoRules = 0,
+        DefaultProduct = 0,
         PhysicalProduct = 1,
         Book = 2,
         Membership = 3,

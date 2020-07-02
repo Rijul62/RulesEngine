@@ -8,10 +8,11 @@ namespace RulesEngine
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Rules Engine");
+            Console.WriteLine(ExecuteRule(3));
         }
 
-        private static void ExecuteRule(int paymentType)
+        private static string ExecuteRule(int paymentType)
         {
             var rules = new IRule[] {
                 new CommissionAgentRule(),
@@ -21,6 +22,8 @@ namespace RulesEngine
                 new PackageSlipRule(),
                 new SentEmailRule(),
             };
+
+            return new RulesEvaluator(rules).Execute(paymentType);
         }
     }
 }
